@@ -11,7 +11,8 @@ const profileLinks = {
   linkedin: 'https://www.linkedin.com/in/axelle-t-inesa/',
   email: 'mailto:axelle.tandissa@gmail.com',
   substack: 'https://mindandmalice.substack.com',
-  cv: '#'
+  cvEn: '/Axelle_Tandissa_Fraud_Analyst_EN.pdf',
+  cvFr: '/Axelle_Tandissa_Fraud_Analyst_FR.pdf'
 };
 
 const projects = [
@@ -26,7 +27,7 @@ const projects = [
   },
   {
     title: 'AI Fraud Detection System',
-    description: 'Machine learning prototype for banking fraud detection with model comparison and behavioral analysis.',
+    description: 'Machine learning prototype for banking fraud detection with model comparison and behavioural analysis.',
     tech: ['Python', 'Pandas', 'ML', 'Fraud'],
     demo: 'https://axelle-fraud-detection.streamlit.app/',
     video: 'https://www.youtube.com/embed/rhjoM1LJSqM?rel=0',
@@ -50,7 +51,7 @@ const cases = [
   { id: '#03', title: 'Valdy / CCF', meta: 'Identity Theft • Organized Fraud', url: 'https://github.com/Axelle141188/fraud-case-files/blob/main/case-03-ccf-valdy.md' }
 ];
 
-const behavioralRows = [
+const behaviouralRows = [
   [
     'Internal Accounting Fraud (e.g. Wirecard)',
     'Halo effect, groupthink, confirmation bias',
@@ -63,7 +64,7 @@ const behavioralRows = [
     'Artificial urgency, authority impersonation, illusion of control',
     'Acute stress, obedience to authority, fast action without reflection',
     'SMS sender name spoofing, transfers to recently opened relay accounts, inbound call followed by unusual transfer',
-    'Behavioral detection, independent verification callback, Naegelen Law anti-spoofing'
+    'Behavioural detection, independent verification callback, Naegelen Law anti-spoofing'
   ],
   [
     'Insider Threat (e.g. Valdy / CCF)',
@@ -77,7 +78,7 @@ const behavioralRows = [
     'Emotional isolation, need for attachment, progressive trust-building',
     'Emotional dependency, sharing of personal information, repeated voluntary transfers',
     'Recently created social media profile, refusal of video or voice calls, progressive financial requests',
-    'Detection of unusual international transfers, banking behavioral alerts, reporting via Stop-Escroqueries'
+    'Detection of unusual international transfers, banking behavioural alerts, reporting via Stop-Escroqueries'
   ],
   [
     'Banking Phishing',
@@ -142,7 +143,7 @@ export default function App() {
             {[
               [Home, 'HOME', '#home'], [User, 'ABOUT ME', '#about'], [Briefcase, 'CORE PROJECTS', '#projects'],
               [Code, 'TECHNICAL SKILLS', '#skills'], [FileText, 'FRAUD CASE FILES', '#cases'],
-              [Brain, 'BEHAVIORAL INTELLIGENCE', '#behavioral'], [Newspaper, 'MIND & MALICE', '#content'], [Mail, 'CONTACT', '#contact']
+              [Brain, 'BEHAVIOURAL INTELLIGENCE', '#behavioral'], [Newspaper, 'MIND & MALICE', '#content'], [Mail, 'CONTACT', '#contact']
             ].map(([Icon, label, link], i) => <a className={i === 0 ? 'active' : ''} href={link} key={label}><Icon size={18} /><span>{label}</span></a>)}
           </nav>
         </div>
@@ -157,18 +158,23 @@ export default function App() {
         <section id="home" className="hero-section">
           <div className="hero-copy">
             <p className="eyebrow">Hi, I'm</p>
-            <h1>Axelle Tandissa Inesa <span>Cyber Fraud & Behavioral Intelligence Analyst</span></h1>
+            <h1>Axelle Tandissa Inesa <span>Cyber Fraud & Behavioural Intelligence Analyst</span></h1>
             <p className="hero-text">
-              I'm building expertise at the intersection of cybersecurity and behavioral
-              psychology — learning to detect fraud, decode manipulation tactics and
-              understand how human vulnerabilities are exploited in financial attacks.
+              I analyse fraud and scams through the intersection of behavioural psychology,
+              data and cybersecurity — focusing on how manipulation tactics and human
+              vulnerabilities are exploited in financial attacks.
             </p>
             <p className="brand-line">
-              Fraud Intelligence • Threat Intelligence • Behavioral Intelligence
+              Fraud Intelligence • Threat Intelligence • Behavioural Intelligence
             </p>
-            <div className="tags">{['Fraud Detection','Threat Intelligence','Fraud Investigation','Behavioral Analysis','Cybersecurity'].map(t => <span key={t}>{t}</span>)}</div>
+            <div className="tags">{['Fraud Detection','Threat Intelligence','Fraud Investigation','Behavioural Analysis','Cybersecurity'].map(t => <span key={t}>{t}</span>)}</div>
             <div className="hero-buttons">
-              <a href={profileLinks.cv} className="primary-btn"><Download size={16} /> Download CV</a>
+              <a href={profileLinks.cvEn} className="primary-btn" download>
+                <Download size={16} /> English CV
+              </a>
+              <a href={profileLinks.cvFr} className="ghost-btn" download>
+                <Download size={16} /> CV français
+              </a>
             </div>
           </div>
 
@@ -243,7 +249,7 @@ export default function App() {
           <div className="left-stack">
             <section id="behavioral" className="light-panel">
               <div className="section-header">
-                <h2><Brain size={22}/> BEHAVIORAL INTELLIGENCE</h2>
+                <h2><Brain size={22}/> BEHAVIOURAL INTELLIGENCE</h2>
                 <a href="https://github.com/Axelle141188/behavioral-intelligence" target="_blank" rel="noreferrer">View full analysis <ArrowRight size={13}/></a>
               </div>
               <div className="table-wrap">
@@ -258,7 +264,7 @@ export default function App() {
                     </tr>
                   </thead>
                   <tbody>
-                    {behavioralRows.map(row => (
+                    {behaviouralRows.map(row => (
                       <tr key={row[0]}>
                         {row.map((cell, i) => <td key={i}>{cell}</td>)}
                       </tr>
